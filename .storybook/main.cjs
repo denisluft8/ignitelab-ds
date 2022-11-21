@@ -19,6 +19,7 @@ module.exports = {
   viteFinal: (config, { configType }) => {
     if (configType === 'PRODUCTION') {
       config.base = '/ignitelab-ds/'
-    },
+    }
     return config
+}
 }

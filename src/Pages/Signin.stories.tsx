@@ -1,44 +1,44 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { within, userEvent, waitFor } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
-import { rest } from "msw";
-import { Signin } from "./Signin";
-import { MicrosoftWordLogo } from "phosphor-react";
+import { Meta, StoryObj } from '@storybook/react'
+import { within, userEvent, waitFor } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
+import { rest } from 'msw'
+import { Signin } from './Signin'
+import { MicrosoftWordLogo } from 'phosphor-react'
 
 export default {
-  title: "Pages/Signin",
+  title: 'Pages/Signin',
   component: Signin,
   args: {},
   argTypes: {},
   parameters: {
     msw: {
       handlers: [
-        rest.post("/sessions", (req, res, ctx) => {
+        rest.post('/sessions', (req, res, ctx) => {
           return res(
             ctx.json({
-              message: "Login realizado!",
+              message: 'Login realizado!'
             })
-          );
-        }),
-      ],
-    },
-  },
-} as Meta;
+          )
+        })
+      ]
+    }
+  }
+} as Meta
 
 export const Default: StoryObj = {
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
+    const canvas = within(canvasElement)
 
     userEvent.type(
-      canvas.getByPlaceholderText("Digite seu e-mail"),
-      "denisluft8@gmail.com"
-    );
-    userEvent.type(canvas.getByPlaceholderText("***********"), "123456789");
+      canvas.getByPlaceholderText('Digite seu e-mail'),
+      'denisluft8@gmail.com'
+    )
+    userEvent.type(canvas.getByPlaceholderText('***********'), '123456789')
 
-    userEvent.click(canvas.getByRole("button"));
+    userEvent.click(canvas.getByRole('button'))
 
     await waitFor(() => {
-      return expect(canvas.getByText("Login realizado!")).toBeInTheDocument();
-    });
-  },
-};
+      return expect(canvas.getByText('Login realizado!')).toBeInTheDocument()
+    })
+  }
+}

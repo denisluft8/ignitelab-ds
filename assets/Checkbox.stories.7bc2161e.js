@@ -1,0 +1,2 @@
+import{C as o}from"./Checkbox.7cd5be53.js";import"./index.20005066.js";import"./iframe.50fbd3c3.js";import"./index.module.b5ef846c.js";import"./index.c551fcd7.js";import"./jsx-runtime.0835915e.js";import"./IconBase.esm.0f2683ac.js";const c={title:"Components/Checkbox",component:o,args:{children:"Create account"},argTypes:{}},i={},n=["Default"];export{i as Default,n as __namedExportsOrder,c as default};
+//# sourceMappingURL=Checkbox.stories.7bc2161e.js.map
